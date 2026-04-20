@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Code') {
-            steps {
-                git 'https://github.com/verycheerry/nodeapi-project-cheeryA2-.git'
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
                 dir('NodeAPI') {
