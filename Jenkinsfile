@@ -2,22 +2,28 @@ pipeline {
     agent any
 
     stages {
-
-        stage('Install Dependencies') {
+        stage('Build') {
             steps {
-                dir('NodeAPI') {
-                    sh 'npm install'
-                }
+                sh 'npm install'
             }
         }
 
-        stage('Run Application') {
+        stage('Test') {
             steps {
-                dir('NodeAPI') {
-                    sh 'nohup node index.js &'
-                }
+                echo 'Testing stage'
             }
         }
 
+        stage('Docker Build') {
+            steps {
+                sh 'docker build -t nodeapi .'
+            }
+        }
+
+        stage('Run Container') {
+            steps {
+                sh 'docker run -d -p 3000:5000 nodeapi'
+            }
+        }
     }
 }
