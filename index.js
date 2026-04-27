@@ -1,22 +1,30 @@
 const express = require('express');
 const app = express();
-const PORT = 5000; // ✅ FIXED PORT
+const PORT = 5000;
 
-app.use(express.json()); // IMPORTANT
+app.use(express.json());
 
+// Home route (HTML with maroon background)
 app.get('/', (req, res) => {
-    res.send('Welcome to Node API');
+    res.send(`
+        <html>
+            <body style="background-color: maroon; color: white; text-align: center;">
+                <h1>Welcome to Node API</h1>
+            </body>
+        </html>
+    `);
 });
 
 app.get('/food', (req, res) => {
     res.send('Food API working');
 });
 
+// ✅ FIXED POST route
 app.post('/order', (req, res) => {
     res.send('Order API working');
 });
 
-// ✅ IMPORTANT: bind to 0.0.0.0
+// IMPORTANT for EC2
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port ${PORT}`);
 });
