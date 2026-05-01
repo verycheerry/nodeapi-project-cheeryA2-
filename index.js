@@ -4,7 +4,6 @@ const PORT = 5000;
 
 app.use(express.json());
 
-// 🌐 Home Route (Pretty Maroon UI)
 app.get('/', (req, res) => {
     res.send(`
         <html>
@@ -28,12 +27,6 @@ app.get('/', (req, res) => {
                         border-radius: 15px;
                         box-shadow: 0 10px 25px rgba(0,0,0,0.4);
                     }
-                    h1 {
-                        margin-bottom: 10px;
-                    }
-                    p {
-                        opacity: 0.8;
-                    }
                     .btn {
                         display: inline-block;
                         margin-top: 20px;
@@ -44,14 +37,11 @@ app.get('/', (req, res) => {
                         text-decoration: none;
                         font-weight: bold;
                     }
-                    .btn:hover {
-                        background: #ddd;
-                    }
                 </style>
             </head>
             <body>
                 <div class="container">
-                    <h1> Node API Running</h1>
+                    <h1>Node API Running</h1>
                     <p>Welcome to your DevOps Final Project</p>
                     <a class="btn" href="/api/feature">Test API</a>
                 </div>
@@ -60,30 +50,21 @@ app.get('/', (req, res) => {
     `);
 });
 
-// 🍔 Food API
 app.get('/food', (req, res) => {
-<<<<<<< conflict-branch-B
-    res.send('Food API working from Branch B');
-    res.send('Food API working from branch A');
-=======
-    res.send('🍔 Food API working from branch A');
->>>>>>> main
+    res.send('Food API working');
 });
 
-// 📦 Feature API (Best for screenshot)
 app.get('/api/feature', (req, res) => {
     res.json({
         status: "success",
-        message: "Feature API update for final DevOps project 🚀"
+        message: "Feature API update for final DevOps project"
     });
 });
 
-// 🛒 Order API
 app.post('/order', (req, res) => {
-    res.send('🛍️ Order API working');
+    res.send('Order API working');
 });
 
-// IMPORTANT for EC2
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port ${PORT}`);
 });
