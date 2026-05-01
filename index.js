@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/food', (req, res) => {
-    res.send('Food API working');
+    res.send('Food API working from branch A');
 });
 
 app.get('/api/feature', (req, res) => {
