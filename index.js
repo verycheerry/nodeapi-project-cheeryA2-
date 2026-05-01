@@ -19,6 +19,12 @@ app.get('/food', (req, res) => {
     res.send('Food API working');
 });
 
+app.get('/api/feature', (req, res) => {
+  res.json({
+    message: 'Feature API update for final DevOps project'
+  });
+});
+
 // ✅ FIXED POST route
 app.post('/order', (req, res) => {
     res.send('Order API working');
