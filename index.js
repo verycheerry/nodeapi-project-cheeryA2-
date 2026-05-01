@@ -62,7 +62,12 @@ app.get('/', (req, res) => {
 
 // 🍔 Food API
 app.get('/food', (req, res) => {
+<<<<<<< conflict-branch-B
+    res.send('Food API working from Branch B');
+    res.send('Food API working from branch A');
+=======
     res.send('🍔 Food API working from branch A');
+>>>>>>> main
 });
 
 // 📦 Feature API (Best for screenshot)
